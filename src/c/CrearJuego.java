@@ -38,10 +38,6 @@ public class CrearJuego {
         } // fin de catch
     } // fin del método abrirArchivo
     
-    public void controlListaPlayer(){
-        
-    }
-
     public void comenzarJuego() {
         abrirArchivo();
 
