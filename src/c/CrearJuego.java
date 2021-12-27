@@ -1,20 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package c;
 
 import java.io.FileNotFoundException;
-import java.util.Formatter;
-import java.util.FormatterClosedException;
-import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
-
-import java.io.FileNotFoundException;
-import java.lang.SecurityException;
 import java.util.ArrayList;
-import java.util.InputMismatchException; //Controla los formatos de los numeros.
 import java.util.Formatter;//Esta clase permite generar String a partir de datos usando una especificación de formato.
 import java.util.FormatterClosedException;
 import java.util.NoSuchElementException;
@@ -31,7 +18,7 @@ public class CrearJuego {
     Premio win = new Premio();
     ArrayList<String> text = new ArrayList<String>();
 
-    Preguntas preg = new Preguntas(text, text, cat);
+    Preguntas preg = new Preguntas();
 
     private Formatter salida; // objeto usado para enviar texto al archivo
 
@@ -50,8 +37,11 @@ public class CrearJuego {
             System.exit(1);
         } // fin de catch
     } // fin del método abrirArchivo
+    
+    public void controlListaPlayer(){
+        
+    }
 
-    // agrega registros al archivo
     public void comenzarJuego() {
         abrirArchivo();
 
@@ -74,19 +64,19 @@ public class CrearJuego {
             lvl=rondaCinco();
         }
         if(lvl==6){
+            agregarRegistros(lvl,nickName,cat.getName(),player.getScore());
+            leerRegistros(lvl, nickName, cat.getName(), player.getScore());  
+            cerrarArchivo();
             salir();
-        }
-        
+        }       
         agregarRegistros(lvl,nickName,cat.getName(),player.getScore());
-        leerRegistros(lvl, nickName, cat.getName(), player.getScore());
-        
+        leerRegistros(lvl, nickName, cat.getName(), player.getScore());  
         cerrarArchivo();
-        
-    }
+    }//fin del metodo comenzarJuego();
     
-    public boolean salir(){
+    public void salir(){
         System.out.println("Gracias por jugar.");
-        return true;
+        System.exit(0);
     }
     
     public int rondaUno(){
@@ -109,8 +99,9 @@ public class CrearJuego {
                 }
                 if(r==3){
                     x++;
-                }else{                  
-                    view.mostrarPuntaje(x,0.0);
+                }else{ 
+                    player.setScore(0.0);
+                    view.mostrarPuntaje(x,player.getScore()); 
                 }
 
             }
@@ -125,7 +116,8 @@ public class CrearJuego {
                     x++;
                 }else{
                     win.setPremio(0);
-                    view.mostrarPuntaje(x,0.0);
+                    player.setScore(0.0);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -140,7 +132,8 @@ public class CrearJuego {
                     x++;
                 }else{
                     win.setPremio(0);
-                    view.mostrarPuntaje(x,0.0);
+                    player.setScore(0.0);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -155,7 +148,8 @@ public class CrearJuego {
                     x++;
                 }else{
                     win.setPremio(0);
-                    view.mostrarPuntaje(x,0.0);
+                    player.setScore(0.0);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -170,7 +164,8 @@ public class CrearJuego {
                     x++;
                 }else{
                     win.setPremio(0);
-                    view.mostrarPuntaje(x,0.0);
+                    player.setScore(0.0);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
             }
 
@@ -198,8 +193,9 @@ public class CrearJuego {
                 if(r==2){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,9.999);
+                    win.setPremio(9.999);
+                    player.setScore(9.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -213,8 +209,9 @@ public class CrearJuego {
                 if(r==2){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,9.999);
+                    win.setPremio(9.999);
+                    player.setScore(9.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -228,8 +225,9 @@ public class CrearJuego {
                 if(r==1){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,9.999);
+                    win.setPremio(9.999);
+                    player.setScore(9.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -243,8 +241,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,9.999);
+                    win.setPremio(9.999);
+                    player.setScore(9.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -258,8 +257,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,9.999);
+                    win.setPremio(9.999);
+                    player.setScore(9.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
             }
 
@@ -287,8 +287,9 @@ public class CrearJuego {
                 if(r==4){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(99.999);
+                    player.setScore(99.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -302,8 +303,9 @@ public class CrearJuego {
                 if(r==4){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(99.999);
+                    player.setScore(99.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -317,8 +319,9 @@ public class CrearJuego {
                 if(r==4){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(99.999);
+                    player.setScore(99.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -332,8 +335,9 @@ public class CrearJuego {
                 if(r==1){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(99.999);
+                    player.setScore(99.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -347,8 +351,9 @@ public class CrearJuego {
                 if(r==4){
                     x++;
                 }else{
-                   
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(99.999);
+                    player.setScore(99.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
             }
 
@@ -376,8 +381,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(999.999);
+                    player.setScore(999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -391,8 +397,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(999.999);
+                    player.setScore(999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -406,8 +413,9 @@ public class CrearJuego {
                 if(r==1){
                     x++;
                 }else{
-                   
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(999.999);
+                    player.setScore(999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -421,8 +429,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(999.999);
+                    player.setScore(999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -436,8 +445,9 @@ public class CrearJuego {
                 if(r==1){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,99.999);
+                    win.setPremio(999.999);
+                    player.setScore(999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
             }
 
@@ -465,8 +475,9 @@ public class CrearJuego {
                 if(r==1){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,999.999);
+                    win.setPremio(9999.999);
+                    player.setScore(9999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -480,8 +491,9 @@ public class CrearJuego {
                 if(r==2){
                     x++;
                 }else{
-                    
-                    view.mostrarPuntaje(x,999.999);
+                    win.setPremio(9999.999);
+                    player.setScore(9999.999);
+                    view.mostrarPuntaje(x,player.getScore());;
                 }
 
             }
@@ -495,7 +507,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    view.mostrarPuntaje(x,999.999);
+                    win.setPremio(9999.999);
+                    player.setScore(9999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -509,7 +523,9 @@ public class CrearJuego {
                 if(r==2){
                     x++;
                 }else{
-                    view.mostrarPuntaje(x,999.999);
+                    win.setPremio(9999.999);
+                    player.setScore(9999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
 
             }
@@ -523,7 +539,9 @@ public class CrearJuego {
                 if(r==3){
                     x++;
                 }else{
-                    view.mostrarPuntaje(x,999.999);
+                    win.setPremio(9999.999);
+                    player.setScore(9999.999);
+                    view.mostrarPuntaje(x,player.getScore());
                 }
             }
 
@@ -532,7 +550,7 @@ public class CrearJuego {
     }
     
     
-
+    // agrega registros al archivo
     public void agregarRegistros(int ronda, String name,String categoría , double score ) {
 
         Categoria cat = new Categoria();
@@ -557,8 +575,8 @@ public class CrearJuego {
 
     }
     
-        public void leerRegistros( int ronda, String name,String categoría , double score)
-  {
+        public void leerRegistros( int ronda, String name,String categoría , double score){
+  
         System.out.printf("%-9s%-15s%-18s%10s\n", "Ronda", "NICKNAME", "Categoria", "Score" );
       
         Categoria cat = new Categoria();
@@ -570,18 +588,15 @@ public class CrearJuego {
         cat.setName(categoría);
         ron.setNum(ronda);
 
-  // muestra el contenido del registro
- System.out.printf( "<%-9d%-15s%-18s%10.2f\n",ron.getNum(),player.getName() ,
+        // muestra el contenido del registro
+        System.out.printf( "<%-9d%-15s%-18s%10.2f\n",ron.getNum(),player.getName() ,
                              cat.getName(),player.getScore());
-   // fin de while
-
- } 
+     }//Fin del metodo leerRegistros. 
     
         public void cerrarArchivo() {
-        if (salida != null) {
+            if (salida != null) {
             salida.close();
+            }
         }
-    }
-
 
 }

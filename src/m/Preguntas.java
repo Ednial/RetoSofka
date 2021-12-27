@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Preguntas {
 
-    Categoria cat;
+    
     ArrayList<String> preg = new ArrayList<String>();
     ArrayList<String> respuestasron1 = new ArrayList<String>();
     ArrayList<String> respuestasron2 = new ArrayList<String>();
@@ -12,25 +12,15 @@ public class Preguntas {
     ArrayList<String> respuestasron4 = new ArrayList<String>();
     ArrayList<String> respuestasron5 = new ArrayList<String>();
 
-    public Preguntas() {
-
+    public Preguntas(){
+        this.preg=preg;
+        this.respuestasron1=respuestasron1;
+        this.respuestasron2=respuestasron2;
+        this.respuestasron3=respuestasron3;
+        this.respuestasron4=respuestasron4;
+        this.respuestasron5=respuestasron5;
     }
-
-    public Preguntas(ArrayList text, ArrayList respuestas, Categoria cat) {
-
-        //this.text = text;
-        this.cat = cat;
-
-    }
-
-    public Categoria getCat() {
-        return cat;
-    }
-
-    public void setCat(Categoria cat) {
-        this.cat = cat;
-    }
-
+    
     public ArrayList<String> getRespuestasron1() {
         return respuestasron1;
     }

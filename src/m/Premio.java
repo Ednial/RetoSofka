@@ -1,21 +1,20 @@
 package m;
 
-public class Premio {
-    
+public class Premio {    
     private double premio;
-
+    
     public Premio(){
         this.premio=premio;
     }
+    
     public double getPremio() {
         return premio;
     }
-
+    
     public void setPremio(double premio) {
         this.premio = premio;
     }
-    
-    
+       
     public void puntaje(int ronda, double prem){
         setPremio(prem);
         if(ronda==1){

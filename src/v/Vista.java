@@ -1,13 +1,9 @@
 package v;
-
-import java.util.NoSuchElementException;
 import m.Preguntas;
-import m.Categoria;
 import m.Premio;
 public class Vista {
     
     Preguntas preg = new Preguntas();
-    Categoria cat = new Categoria();
     Premio ptj = new Premio();
     
     public void mostrarPreguntasRon1(String categoria){  

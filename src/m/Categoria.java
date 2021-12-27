@@ -1,9 +1,6 @@
 package m;
-
 import java.util.ArrayList;
-
-public class Categoria {
-    
+public class Categoria {    
     String name;
     ArrayList<String> cadCategorias = new ArrayList<String>();
 
@@ -11,11 +8,10 @@ public class Categoria {
         return name;
     }
 
-    public void setName(String name) {
-        
+    public void setName(String name) {    
         this.name = name;
     }
-    
+    //Elige una categoria aleatoriamente.
     public String categoriaRandom(){
             String m,t,g,h,a;
             m="Matematicas";
@@ -31,7 +27,5 @@ public class Categoria {
             int aleatorio = (int)(Math.random()*4); //Numero random.
             setName(cadCategorias.get(aleatorio));
             return cadCategorias.get(aleatorio);
-    }
-
-    
+    }   
 }

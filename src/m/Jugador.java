@@ -1,6 +1,7 @@
 package m;
 
 import m.Premio;
+
 public class Jugador {
     private String name;
     private double score;
@@ -8,7 +9,7 @@ public class Jugador {
     Premio ptj = new Premio();
     
     public void asignarScore(){
-        score= ptj.getPremio();
+        this.score= ptj.getPremio();
     }
 
     public String getName() {
