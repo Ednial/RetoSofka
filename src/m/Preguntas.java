@@ -272,7 +272,7 @@ public class Preguntas {
     }
 
     public String addRespuestasAnime() {
-        //RONDA 1
+        //RONDA 1 
         respuestasron1.add("1. Krilin");
         respuestasron1.add("2. Gohan");
         respuestasron1.add("3. Vegeta");
@@ -301,303 +301,319 @@ public class Preguntas {
         return "Anime";
 
     }
+    
+    public boolean respuestasCorrecta(int x,int ronda,String cat){
+        boolean pass= false;
+        //RESPUESTA MATEMATICAS RONDA 1
+        if(x==3&&ronda==1&&cat=="Matematicas"){
+            pass=true;
+        }
+        //RESPUESTA MATEMATICAS RONDA 2
+        if(x==2&&ronda==2&&cat=="Matematicas"){
+            pass=true;
+        }
+        //RESPUESTA MATEMATICAS RONDA 3
+        if(x==4&&ronda==3&&cat=="Matematicas"){
+            pass=true;
+        }
+        //RESPUESTA MATEMATICAS RONDA 4
+        if(x==3&&ronda==4&&cat=="Matematicas"){
+            pass=true;
+        }
+        //RESPUESTA MATEMATICAS RONDA 5
+        if(x==1&&ronda==5&&cat=="Matematicas"){
+            pass=true;
+        }
+        //RESPUESTA TECNOLOGIA RONDA 1
+        if(x==3&&ronda==1&&cat=="Tecnologia"){
+            pass=true;
+        }
+        //RESPUESTA TECNOLOGIA RONDA 2
+        if(x==2&&ronda==2&&cat=="Tecnologia"){
+            pass=true;
+        }
+        //RESPUESTA TECNOLOGIA RONDA 3
+        if(x==4&&ronda==3&&cat=="Tecnologia"){
+            pass=true;
+        }
+        //RESPUESTA TEGNOLOGIA RONDA 4
+        if(x==3&&ronda==4&&cat=="Tecnologia"){
+            pass=true;
+        }
+        //RESPUESTA TECNOLOGIA RONDA 5
+        if(x==2&&ronda==5&&cat=="Tecnologia"){
+            pass=true;
+        }
+        //RESPUESTA GAMES RONDA 1
+        if(x==4&&ronda==1&&cat=="Games"){
+            pass=true;
+        }
+        //RESPUESTA GAMES RONDA 2
+        if(x==3&&ronda==2&&cat=="Games"){
+            pass=true;
+        }
+        //RESPUESTA GAMES RONDA 3
+        if(x==1&&ronda==3&&cat=="Games"){
+            pass=true;
+        }
+        //RESPUESTA GAMES RONDA 4
+        if(x==3&&ronda==4&&cat=="Games"){
+            pass=true;
+        }
+        //RESPUESTA GAMES RONDA 5
+        if(x==2&&ronda==5&&cat=="Games"){
+            pass=true;
+        }
+        //RESPUESTA HISTORIA RONDA 1
+        if(x==2&&ronda==1&&cat=="Historia"){
+            pass=true;
+        }
+        //RESPUESTA HISTORIA RONDA 2
+        if(x==1&&ronda==2&&cat=="Historia"){
+            pass=true;
+        }
+        //RESPUESTA HISTORIA RONDA 3
+        if(x==4&&ronda==3&&cat=="Historia"){
+            pass=true;
+        }
+        //RESPUESTA HISTORIA RONDA 4
+        if(x==1&&ronda==4&&cat=="Historia"){
+            pass=true;
+        }
+        //RESPUESTA HISTORIA RONDA 5
+        if(x==3&&ronda==5&&cat=="Historia"){
+            pass=true;
+        }
+        //RESPUESTA ANIME RONDA 1
+        if(x==4&&ronda==1&&cat=="Anime"){
+            pass=true;
+        }
+        //RESPUESTA ANIME RONDA 2
+        if(x==3&&ronda==2&&cat=="Anime"){
+            pass=true;
+        }
+        //RESPUESTA ANIME RONDA 3
+        if(x==4&&ronda==3&&cat=="Anime"){
+            pass=true;
+        }
+        //RESPUESTA ANIME RONDA 4
+        if(x==1&&ronda==4&&cat=="Anime"){
+            pass=true;
+        }
+        //RESPUESTA ANIME RONDA 5
+        if(x==3&&ronda==5&&cat=="Anime"){
+            pass=true;
+        }        
+        return pass;
+    }
 
-    public void imprimirPreguntasRon1(String categoria) {
+    public void imprimirPreguntasRon(String categoria, int x) {
         preg.clear();
         if (categoria == "Matematicas") {
             addPreguntasMate();
-            System.out.println("RONDA#1" + preg.get(0) + "\n");
+            System.out.println("RONDA#"+(x+1)+ preg.get(x) + "\n");
         }
         if (categoria == "Tecnologia") {
             addPreguntasTec();
-            System.out.println("RONDA#1" + preg.get(0) + "\n");
+            System.out.println("RONDA#"+(x+1)+ preg.get(x) + "\n");
         }
         if (categoria == "Historia") {
             addPreguntasHisto();
-            System.out.println("RONDA#1" + preg.get(0) + "\n");
+            System.out.println("RONDA#"+(x+1)+ preg.get(x) + "\n");
         }
         if (categoria == "Games") {
             addPreguntasGame();
-            System.out.println("RONDA#1" + preg.get(0) + "\n");
+            System.out.println("RONDA#"+(x+1)+ preg.get(x) + "\n");
         }
         if (categoria == "Anime") {
             addPreguntasAnime();
-            System.out.println("RONDA#1" + preg.get(0) + "\n");
+            System.out.println("RONDA#"+(x+1)+ preg.get(x) + "\n");
         }
 
     }
-
-    public void imprimirPreguntasRon2(String categoria) {
-        preg.clear();
-        if (categoria == "Matematicas") {
-            addPreguntasMate();
-            System.out.println("RONDA#2" + preg.get(1) + "\n");
-        }
-        if (categoria == "Tecnologia") {
-            addPreguntasTec();
-            System.out.println("RONDA#2" + preg.get(1) + "\n");
-        }
-        if (categoria == "Historia") {
-            addPreguntasHisto();
-            System.out.println("RONDA#2" + preg.get(1) + "\n");
-        }
-        if (categoria == "Games") {
-            addPreguntasGame();
-            System.out.println("RONDA#2" + preg.get(1) + "\n");
-        }
-        if (categoria == "Anime") {
-            addPreguntasAnime();
-            System.out.println("RONDA#2" + preg.get(1) + "\n");
-        }
-
-    }
-    public void imprimirPreguntasRon3(String categoria) {
-        preg.clear();
-        if (categoria == "Matematicas") {
-            addPreguntasMate();
-            System.out.println("RONDA#3" + preg.get(2) + "\n");
-        }
-        if (categoria == "Tecnologia") {
-            addPreguntasTec();
-            System.out.println("RONDA#3" + preg.get(2) + "\n");
-        }
-        if (categoria == "Historia") {
-            addPreguntasHisto();
-            System.out.println("RONDA#3" + preg.get(2) + "\n");
-        }
-        if (categoria == "Games") {
-            addPreguntasGame();
-            System.out.println("RONDA#3" + preg.get(2) + "\n");
-        }
-        if (categoria == "Anime") {
-            addPreguntasAnime();
-            System.out.println("RONDA#3" + preg.get(2) + "\n");
-        }
-
-    }
-
-    public void imprimirPreguntasRon4(String categoria) {
-        preg.clear();
-        if (categoria == "Matematicas") {
-            addPreguntasMate();
-            System.out.println("RONDA#4" + preg.get(3) + "\n");
-        }
-        if (categoria == "Tecnologia") {
-            addPreguntasTec();
-            System.out.println("RONDA#4" + preg.get(3) + "\n");
-        }
-        if (categoria == "Historia") {
-            addPreguntasHisto();
-            System.out.println("RONDA#4" + preg.get(3) + "\n");
-        }
-        if (categoria == "Games") {
-            addPreguntasGame();
-            System.out.println("RONDA#4" + preg.get(3) + "\n");
-        }
-        if (categoria == "Anime") {
-            addPreguntasAnime();
-            System.out.println("RONDA#4" + preg.get(3) + "\n");
-        }
-
-    }
-    public void imprimirPreguntasRon5(String categoria) {
-        preg.clear();
-        if (categoria == "Matematicas") {
-            addPreguntasMate();
-            System.out.println("RONDA#5" + preg.get(4) + "\n");
-        }
-        if (categoria == "Tecnologia") {
-            addPreguntasTec();
-            System.out.println("RONDA#5" + preg.get(4) + "\n");
-        }
-        if (categoria == "Historia") {
-            addPreguntasHisto();
-            System.out.println("RONDA#5" + preg.get(4) + "\n");
-        }
-        if (categoria == "Games") {
-            addPreguntasGame();
-            System.out.println("RONDA#5" + preg.get(4) + "\n");
-        }
-        if (categoria == "Anime") {
-            addPreguntasAnime();
-            System.out.println("RONDA#5" + preg.get(4) + "\n");
-        }
-
-    }
-
-    public void imprimirRespuestasRon1(String categoria) {
-        respuestasron1.clear();
-        if (categoria == "Matematicas") {
+    public void imprimirRespuestasRon(String categoria, int x) {
+        x++;
+        //RONDA UNO
+        if (categoria == "Matematicas"&& x==1) {
+            respuestasron1.clear();
             addRespuestasMate();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron1.get(i));
             }
         }
-        if (categoria == "Tecnologia") {
+        if (categoria == "Tecnologia" && x==1) {
+            respuestasron1.clear();
             addRespuestasTec();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron1.get(i));
             }
         }
-        if (categoria == "Historia") {
+        if (categoria == "Historia" && x==1) {
+            respuestasron1.clear();
             addRespustasHisto();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron1.get(i));
             }
         }
-        if (categoria == "Games") {
+        if (categoria == "Games" && x==1) {
+            respuestasron1.clear();
             addRespuestasGame();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron1.get(i));
             }
         }
-        if (categoria == "Anime") {
+        if (categoria == "Anime" && x==1) {
+            respuestasron1.clear();
             addRespuestasAnime();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron1.get(i));
             }
         }
-
-    }
-
-    public void imprimirRespuestasRon2(String categoria) {
-        respuestasron2.clear();
-        if (categoria == "Matematicas") {
+        //RONDA DOS
+        if (categoria == "Matematicas"&& x==2) {
+            respuestasron2.clear();
             addRespuestasMate();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron2.get(i));
             }
         }
-        if (categoria == "Tecnologia") {
+        if (categoria == "Tecnologia" && x==2) {
+            respuestasron2.clear();
             addRespuestasTec();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron2.get(i));
             }
         }
-        if (categoria == "Historia") {
+        if (categoria == "Historia" && x==2) {
+            respuestasron2.clear();
             addRespustasHisto();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron2.get(i));
             }
         }
-        if (categoria == "Games") {
+        if (categoria == "Games" && x==2) {
+            respuestasron2.clear();
             addRespuestasGame();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron2.get(i));
             }
         }
-        if (categoria == "Anime") {
+        if (categoria == "Anime" && x==2) {
+            respuestasron2.clear();
             addRespuestasAnime();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron2.get(i));
             }
         }
-
-    }
-
-    public void imprimirRespuestasRon3(String categoria) {
-        respuestasron3.clear();
-        if (categoria == "Matematicas") {
+        //RONDA TRES
+        if (categoria == "Matematicas"&& x==3) {
+            respuestasron3.clear();
             addRespuestasMate();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron3.get(i));
             }
         }
-        if (categoria == "Tecnologia") {
+        if (categoria == "Tecnologia" && x==3) {
+            respuestasron3.clear();
             addRespuestasTec();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron3.get(i));
             }
         }
-        if (categoria == "Historia") {
+        if (categoria == "Historia" && x==3) {
+            respuestasron3.clear();
             addRespustasHisto();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron3.get(i));
             }
         }
-        if (categoria == "Games") {
+        if (categoria == "Games" && x==3) {
+            respuestasron3.clear();
             addRespuestasGame();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron3.get(i));
             }
         }
-        if (categoria == "Anime") {
+        if (categoria == "Anime" && x==3) {
+            respuestasron3.clear();
             addRespuestasAnime();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron3.get(i));
             }
         }
-
-    }
-
-    public void imprimirRespuestasRon4(String categoria) {
-        respuestasron4.clear();
-        if (categoria == "Matematicas") {
+        //RONDA CUATRO
+        if (categoria == "Matematicas"&& x==4) {
+            respuestasron4.clear();
             addRespuestasMate();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron4.get(i));
             }
         }
-        if (categoria == "Tecnologia") {
+        if (categoria == "Tecnologia" && x==4) {
+            respuestasron4.clear();
             addRespuestasTec();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron4.get(i));
             }
         }
-        if (categoria == "Historia") {
+        if (categoria == "Historia" && x==4) {
+            respuestasron4.clear();
             addRespustasHisto();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron4.get(i));
             }
         }
-        if (categoria == "Games") {
+        if (categoria == "Games" && x==4) {
+            respuestasron4.clear();
             addRespuestasGame();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron4.get(i));
             }
         }
-        if (categoria == "Anime") {
+        if (categoria == "Anime" && x==4) {
+            respuestasron4.clear();
             addRespuestasAnime();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron4.get(i));
             }
         }
-
-    }
-
-    public void imprimirRespuestasRon5(String categoria) {
-        respuestasron5.clear();
-        if (categoria == "Matematicas") {
+        //RONDA CINCO
+        if (categoria == "Matematicas"&& x==5) {
+            respuestasron5.clear();
             addRespuestasMate();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron5.get(i));
             }
         }
-        if (categoria == "Tecnologia") {
+        if (categoria == "Tecnologia" && x==5) {
+            respuestasron5.clear();
             addRespuestasTec();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron5.get(i));
             }
         }
-        if (categoria == "Historia") {
+        if (categoria == "Historia" && x==5) {
+            respuestasron5.clear();
             addRespustasHisto();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron5.get(i));
             }
         }
-        if (categoria == "Games") {
+        if (categoria == "Games" && x==5) {
+            respuestasron5.clear();
             addRespuestasGame();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron5.get(i));
             }
         }
-        if (categoria == "Anime") {
+        if (categoria == "Anime" && x==5) {
+            respuestasron5.clear();
             addRespuestasAnime();
             for (int i = 0; i < 4; i++) {
                 System.out.println(respuestasron5.get(i));
             }
         }
 
-    }
+    }//Fin del metodo imprimirRespues();
 
 }

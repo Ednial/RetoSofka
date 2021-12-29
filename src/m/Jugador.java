@@ -1,16 +1,33 @@
 package m;
 
-import m.Premio;
-
 public class Jugador {
     private String name;
+    private String categoria;
+    private int ronda;
     private double score;
     
-    Premio ptj = new Premio();
-    
-    public void asignarScore(){
-        this.score= ptj.getPremio();
+    public Jugador(){
+        
     }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+    
+    
+    public int getRonda() {
+        return ronda;
+    }
+
+    public void setRonda(int ronda) {
+        this.ronda = ronda;
+    }
+    
+    
 
     public String getName() {
         return name;
